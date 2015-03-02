@@ -1,5 +1,6 @@
 package com.huangbop.takeout;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +19,7 @@ public class MainActivity extends ActionBarActivity {
   private Button btnLoseMoney;
   private EditText etInit;
   private int money = 0;
+  private Button btnSwitch;
 
   private Button btnChange;
   private ImageView ivChange;
@@ -39,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
     tvGetMoney = (TextView)findViewById(R.id.tvGetMoney);
     btnGetMoney = (Button)findViewById(R.id.btnGetMoney);
     btnLoseMoney = (Button)findViewById(R.id.btnLoseMoney);
+    btnSwitch = (Button)findViewById(R.id.btnSwitch);
     etInit = (EditText)findViewById(R.id.etInit);
 
     btnChange = (Button) findViewById(R.id.btnChange);
@@ -81,6 +84,17 @@ public class MainActivity extends ActionBarActivity {
       }
 
     });
+
+
+    btnSwitch.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
+      }
+
+    });
+
 
 
   }
