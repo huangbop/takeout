@@ -39,7 +39,12 @@ public class LifeCycle extends Activity {
       public void onClick(View v) {
         String strMsg = etSend.getText().toString().trim();
         Intent intent = new Intent();
-        intent.putExtra("msg", strMsg);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("msg", strMsg);
+        bundle.putInt("value", 10);
+
+        intent.putExtras(bundle);
         intent.setClass(LifeCycle.this, DataActivity.class);
         startActivity(intent);
       }

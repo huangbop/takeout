@@ -21,9 +21,9 @@ public class DataActivity extends ActionBarActivity {
 
     Intent intent = this.getIntent();
 
-    String strMsg = intent.getStringExtra("msg");
+    Bundle bundle = intent.getExtras();
 
-    tvMsg.setText(strMsg);
+    tvMsg.setText(bundle.getString("msg") + bundle.getInt("value"));
 
   }
 
