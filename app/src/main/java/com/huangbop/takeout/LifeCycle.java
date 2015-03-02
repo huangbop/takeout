@@ -1,8 +1,13 @@
 package com.huangbop.takeout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 /**
@@ -11,6 +16,8 @@ import android.widget.Toast;
 public class LifeCycle extends Activity {
 
   private int count = 0;
+  private EditText etSend;
+  private Button btnSend;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +30,21 @@ public class LifeCycle extends Activity {
 
     setContentView(R.layout.activity_lifecycle);
     Log.i("LifeCycle", "onCreate finished.");
+
+    etSend = (EditText) findViewById(R.id.etSend);
+    btnSend = (Button) findViewById(R.id.btnSend);
+
+    btnSend.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        String strMsg = etSend.getText().toString().trim();
+        Intent intent = new Intent();
+        intent.putExtra("msg", strMsg);
+        intent.setClass(LifeCycle.this, DataActivity.class);
+        startActivity(intent);
+      }
+    });
+
 
   }
 
