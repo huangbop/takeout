@@ -1,26 +1,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	      xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-	      android:layout_height="match_parent"
-	      android:background="#d0e0f0"
-	      android:orientation="vertical"
-	      tools:context=".MainActivity">
+          xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#d0e0f0"
+          android:orientation="vertical"
+          tools:context=".MainActivity">
 
-  <TextView android:text="You have click times." android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvGetMoney"/>
+  <EditText
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="20px"
+      android:id="@+id/etInit"
+      android:hint="input the init value"
+      />
+
+
+  <TextView android:text="You have click times."
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="20px"
+      android:textColor="#0000e0"
+      android:textSize="20dp"
+      android:layout_gravity="center_horizontal"
+      android:id="@+id/tvGetMoney"/>
 
   <Button
-      android:layout_width="wrap_content"
+      android:layout_width="fill_parent"
       android:layout_height="wrap_content"
+      android:layout_margin="20px"
       android:text="click me and get money"
       android:id="@+id/btnGetMoney"
+      android:background="#00d000"
       />
 
   <Button
-      android:layout_width="wrap_content"
+      android:layout_width="fill_parent"
       android:layout_height="wrap_content"
+      android:layout_margin="20px"
       android:text="lose money"
       android:id="@+id/btnLoseMoney"
+      android:background="#d00000"
       />
 
 </LinearLayout>

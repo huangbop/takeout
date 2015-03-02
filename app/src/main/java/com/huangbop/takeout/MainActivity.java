@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ public class MainActivity extends ActionBarActivity {
   private Button btnGetMoney;
   private TextView tvGetMoney;
   private Button btnLoseMoney;
+  private EditText etInit;
   private int money = 0;
 
   @Override
@@ -25,12 +27,19 @@ public class MainActivity extends ActionBarActivity {
     tvGetMoney = (TextView)findViewById(R.id.tvGetMoney);
     btnGetMoney = (Button)findViewById(R.id.btnGetMoney);
     btnLoseMoney = (Button)findViewById(R.id.btnLoseMoney);
+    etInit = (EditText)findViewById(R.id.etInit);
 
     btnGetMoney.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        money++;
-        tvGetMoney.setText("You clicked " + money + " times.");
+        String strInit = etInit.getText().toString().trim();
+        int iInit = Integer.parseInt(strInit);
+        if (money == iInit) {
+          Toast.makeText(MainActivity.this, "you have archive the goal", Toast.LENGTH_SHORT).show();
+        } else {
+          money++;
+          tvGetMoney.setText("You clicked " + money + " times.");
+        }
       }
     });
 
