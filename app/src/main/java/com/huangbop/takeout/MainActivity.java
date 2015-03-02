@@ -7,11 +7,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
   private Button btnGetMoney;
   private TextView tvGetMoney;
+  private Button btnLoseMoney;
   private int money = 0;
 
   @Override
@@ -20,14 +22,27 @@ public class MainActivity extends ActionBarActivity {
     setContentView(R.layout.activity_main);
 
 //    our code
-    btnGetMoney = (Button)findViewById(R.id.btnGetMoney);
     tvGetMoney = (TextView)findViewById(R.id.tvGetMoney);
+    btnGetMoney = (Button)findViewById(R.id.btnGetMoney);
+    btnLoseMoney = (Button)findViewById(R.id.btnLoseMoney);
 
     btnGetMoney.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         money++;
         tvGetMoney.setText("You clicked " + money + " times.");
+      }
+    });
+
+    btnLoseMoney.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if (money == 0) {
+          Toast.makeText(MainActivity.this, "These is no money, please don't clicked more.", Toast.LENGTH_SHORT).show();
+        } else {
+          money--;
+          tvGetMoney.setText("You clicked " + money + " times.");
+        }
       }
     });
 
