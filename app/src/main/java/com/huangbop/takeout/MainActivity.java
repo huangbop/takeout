@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,17 @@ public class MainActivity extends ActionBarActivity {
   private EditText etInit;
   private int money = 0;
 
+  private Button btnChange;
+  private ImageView ivChange;
+  private int[] imageIDs = {
+          R.drawable.a,
+          R.drawable.b,
+          R.drawable.c,
+          R.drawable.d,
+          R.drawable.e,
+  };
+  private int imageIndex = 0;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -28,6 +40,9 @@ public class MainActivity extends ActionBarActivity {
     btnGetMoney = (Button)findViewById(R.id.btnGetMoney);
     btnLoseMoney = (Button)findViewById(R.id.btnLoseMoney);
     etInit = (EditText)findViewById(R.id.etInit);
+
+    btnChange = (Button) findViewById(R.id.btnChange);
+    ivChange = (ImageView) findViewById(R.id.ivChange);
 
     btnGetMoney.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -53,6 +68,18 @@ public class MainActivity extends ActionBarActivity {
           tvGetMoney.setText("You clicked " + money + " times.");
         }
       }
+    });
+
+    btnChange.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        imageIndex++;
+        if (imageIndex > 4)
+          imageIndex = 0;
+        ivChange.setImageResource(imageIDs[imageIndex]);
+
+      }
+
     });
 
 

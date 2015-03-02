@@ -41,4 +41,25 @@
       android:background="#d00000"
       />
 
+  <Button
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="click me and change the image"
+      android:textColor="#00ffff"
+      android:textSize="8pt"
+      android:id="@+id/btnChange"
+      />
+
+  <ImageView
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_margin="20px"
+      android:background="#ffff00"
+      android:id="@+id/ivChange"
+      android:src="@drawable/a"
+      />
+
+
+
+
 </LinearLayout>
