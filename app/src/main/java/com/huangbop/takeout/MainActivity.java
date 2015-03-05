@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 
 public class MainActivity extends ActionBarActivity {
   private Button btnGetMoney;
@@ -47,6 +49,10 @@ public class MainActivity extends ActionBarActivity {
     btnChange = (Button) findViewById(R.id.btnChange);
     ivChange = (ImageView) findViewById(R.id.ivChange);
 
+    Picasso.with(this)
+            .load("https://cms-assets.tutsplus.com/uploads/users/21/posts/19431/featured_image/CodeFeature.jpg")
+            .into(ivChange);
+
     btnGetMoney.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -76,10 +82,13 @@ public class MainActivity extends ActionBarActivity {
     btnChange.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        imageIndex++;
-        if (imageIndex > 4)
-          imageIndex = 0;
-        ivChange.setImageResource(imageIDs[imageIndex]);
+//        imageIndex++;
+//        if (imageIndex > 4)
+//          imageIndex = 0;
+//        ivChange.setImageResource(imageIDs[imageIndex]);
+        Picasso.with(MainActivity.this)
+                .load("https://cms-assets.tutsplus.com/uploads/users/21/posts/19431/featured_image/CodeFeature.jpg")
+                .into(ivChange);
 
       }
 
