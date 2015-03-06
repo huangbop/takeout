@@ -11,6 +11,7 @@ import android.widget.Toast;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 
 public class DataActivity extends ActionBarActivity {
@@ -45,13 +46,12 @@ public class DataActivity extends ActionBarActivity {
       @Override
       public void onClick(View v) {
         footBaller = new FootBaller();
-
-        footBaller.setAge(10);
-        footBaller.setName("C Ro");
-        footBaller.save(DataActivity.this, new SaveListener() {
+        footBaller.setObjectId("ee5284aa44");
+        footBaller.setAge(100);
+        footBaller.setName("X Ro");
+        footBaller.update(DataActivity.this, new UpdateListener() {
           @Override
           public void onSuccess() {
-
             Toast.makeText(DataActivity.this, "OK", Toast.LENGTH_SHORT).show();
           }
 
@@ -60,7 +60,6 @@ public class DataActivity extends ActionBarActivity {
             Toast.makeText(DataActivity.this, "Failed.", Toast.LENGTH_SHORT).show();
           }
         });
-
 
       }
     });
