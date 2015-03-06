@@ -23,4 +23,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.squareup.picasso:picasso:2.5.0'
+    compile files('libs/BmobSDK_V3.3.3_0211.jar')
+    compile files('libs/BmobPush_V0.5beta_1027.jar')
 }
