@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+  <ImageView
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:id="@+id/imageView"
+      android:layout_centerVertical="true"
+      android:scaleType="matrix"
+      android:src="@drawable/bg"
+      android:adjustViewBounds="false"
+      android:alpha="0.5"
+      android:cropToPadding="false"
+      />
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:id="@+id/l_a"
+      android:layout_above="@+id/l_b">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User: "
+        android:id="@+id/textView"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etUser"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:id="@+id/l_b"
+      android:layout_above="@+id/l_c">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password: "
+        android:id="@+id/textView2"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPassword"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:id="@+id/l_c"
+      android:layout_alignParentEnd="false"
+      android:layout_alignParentRight="false"
+      android:layout_alignParentBottom="false"
+      android:layout_alignParentLeft="false"
+      android:layout_above="@+id/l_d">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:id="@+id/btnLogin"/>
+  </LinearLayout>
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentBottom="true"
+      android:id="@+id/l_d">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="register"
+        android:id="@+id/btnRegister"/>
+  </LinearLayout>
+
+</RelativeLayout>

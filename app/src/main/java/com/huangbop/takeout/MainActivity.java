@@ -1,39 +1,58 @@
 package com.huangbop.takeout;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
+
+  private Button btnLogin;
+  private Button btnRegister;
+  private EditText etUser;
+  private EditText etPassword;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_login);
+
+    findViews();
+
+    setListener();
+
+  }
+
+  private void setListener() {
+    btnLogin.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent i = new Intent(MainActivity.this, CurrentActivity.class);
+        startActivity(i);
+        finish();
+      }
+    });
+
+    btnRegister.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+        startActivity(i);
+      }
+    });
+
+  }
+
+  private void findViews() {
+    btnLogin = (Button) findViewById(R.id.btnLogin);
+    btnRegister = (Button) findViewById(R.id.btnRegister);
+    etUser = (EditText) findViewById(R.id.etUser);
+    etPassword = (EditText) findViewById(R.id.etPassword);
+
   }
 
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_main, menu);
-    return true;
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
-
-    //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
-      return true;
-    }
-
-    return super.onOptionsItemSelected(item);
-  }
 }
