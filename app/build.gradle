@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:support-v4:21.0.3'
     compile files('libs/BmobSDK_V3.3.3_0211.jar')
     compile files('libs/BmobPush_V0.5beta_1027.jar')
+    compile files('libs/kenburnsview-1.0.6.jar')
 }

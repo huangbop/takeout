@@ -4,11 +4,10 @@
                 android:layout_height="match_parent"
                 android:background="#d0e0f0">
 
-  <ImageView
+  <com.flaviofaria.kenburnsview.KenBurnsView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:id="@+id/bgView"
-      android:layout_centerVertical="true"
-      android:layout_alignParentRight="true"
-      android:layout_alignParentEnd="true"/>
+      android:src="@drawable/bg"
+      android:scaleType="matrix"/>
 </RelativeLayout>
