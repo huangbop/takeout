@@ -3,13 +3,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-  <TextView
-      android:layout_width="fill_parent"
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/etUser"
+      android:text="the user name"/>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/etPassword"
+      android:text="the password"
+      android:password="true"
+      android:layout_below="@+id/etUser"/>
+
+  <Button
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Register"
-      android:id="@+id/textView4"
-      android:layout_alignParentTop="true"
-      android:layout_alignParentRight="true"
-      android:layout_alignParentEnd="true"
-      android:layout_marginTop="89dp"/>
+      android:id="@+id/btnRegister"
+      android:layout_below="@+id/etPassword"/>
 </RelativeLayout>
