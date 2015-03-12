@@ -1,4 +1,4 @@
-package com.huangbop.takeout;
+package com.huangbop.takeout.view;
 
 import android.app.Activity;
 import android.widget.Toast;

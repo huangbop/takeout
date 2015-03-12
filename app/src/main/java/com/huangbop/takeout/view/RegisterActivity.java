@@ -1,6 +1,9 @@
-package com.huangbop.takeout;
+package com.huangbop.takeout.view;
 
 import android.os.Bundle;
+
+import com.huangbop.takeout.R;
+import com.huangbop.takeout.view.BaseActivity;
 
 /**
  * Created by Administrator on 2015/3/11.

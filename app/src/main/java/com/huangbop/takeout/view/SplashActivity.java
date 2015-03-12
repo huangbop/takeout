@@ -1,10 +1,11 @@
-package com.huangbop.takeout;
+package com.huangbop.takeout.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.flaviofaria.kenburnsview.Transition;
+import com.huangbop.takeout.R;
 
 import cn.bmob.v3.Bmob;
 
