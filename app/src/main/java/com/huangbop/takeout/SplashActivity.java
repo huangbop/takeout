@@ -38,7 +38,7 @@ public class SplashActivity extends BaseActivity {
         toast("trans end");
 
         Intent intent;
-        intent = new Intent(SplashActivity.this, MainActivity.class);
+        intent = new Intent(SplashActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
       }
