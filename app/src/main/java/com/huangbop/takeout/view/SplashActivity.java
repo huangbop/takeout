@@ -28,16 +28,16 @@ public class SplashActivity extends BaseActivity {
 
 //  bg
     bgView = (KenBurnsView) findViewById(R.id.bgView);
+    bgView.setImageResource(R.drawable.bg);
+//    bgView.
     bgView.setTransitionListener(new KenBurnsView.TransitionListener() {
       @Override
       public void onTransitionStart(Transition transition) {
-        toast("trans start");
+
       }
 
       @Override
       public void onTransitionEnd(Transition transition) {
-        toast("trans end");
-
         Intent intent;
         intent = new Intent(SplashActivity.this, LoginActivity.class);
         startActivity(intent);

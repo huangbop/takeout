@@ -87,7 +87,6 @@
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="kenburnsview-1.0.6" level="project" />
-    <orderEntry type="library" exported="" name="roundedimageview-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="BmobSDK_V3.3.3_0211" level="project" />
     <orderEntry type="library" exported="" name="BmobPush_V0.5beta_1027" level="project" />
   </component>
