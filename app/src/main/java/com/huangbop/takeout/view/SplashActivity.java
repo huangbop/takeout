@@ -2,8 +2,14 @@ package com.huangbop.takeout.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
 import com.flaviofaria.kenburnsview.KenBurnsView;
+import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
 import com.flaviofaria.kenburnsview.Transition;
 import com.huangbop.takeout.R;
 
@@ -29,21 +35,31 @@ public class SplashActivity extends BaseActivity {
 //  bg
     bgView = (KenBurnsView) findViewById(R.id.bgView);
     bgView.setImageResource(R.drawable.bg);
-//    bgView.
-    bgView.setTransitionListener(new KenBurnsView.TransitionListener() {
+    bgView.setTransitionGenerator(new RandomTransitionGenerator(20000, new DecelerateInterpolator()));
+    AlphaAnimation alpha = new AlphaAnimation(1.0f, 1.0f);
+    alpha.setDuration(3000);
+    bgView.setAnimation(alpha);
+    alpha.setAnimationListener(new Animation.AnimationListener() {
       @Override
-      public void onTransitionStart(Transition transition) {
+      public void onAnimationStart(Animation animation) {
 
       }
 
       @Override
-      public void onTransitionEnd(Transition transition) {
-        Intent intent;
-        intent = new Intent(SplashActivity.this, LoginActivity.class);
-        startActivity(intent);
+      public void onAnimationEnd(Animation animation) {
+        bgView.pause();
+        Intent toMain = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(toMain);
         finish();
       }
+
+      @Override
+      public void onAnimationRepeat(Animation animation) {
+
+      }
     });
+
+
 
 //
 
