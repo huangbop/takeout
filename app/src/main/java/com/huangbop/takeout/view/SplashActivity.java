@@ -1,5 +1,6 @@
 package com.huangbop.takeout.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
@@ -11,7 +12,7 @@ import com.huangbop.takeout.R;
 /**
  * Created by Administrator on 2015/3/10.
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends Activity {
 
   private KenBurnsView bgView;
 
