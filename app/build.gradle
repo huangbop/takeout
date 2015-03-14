@@ -29,4 +29,5 @@ dependencies {
     compile files('libs/kenburnsview-1.0.6.jar')
     compile files('libs/kenburnsview-1.0.6-javadoc.jar')
     compile files('libs/kenburnsview-1.0.6-sources.jar')
+    compile 'com.ikimuhendis:ldrawer:0.1'
 }

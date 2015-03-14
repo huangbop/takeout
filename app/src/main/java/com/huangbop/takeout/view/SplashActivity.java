@@ -23,7 +23,7 @@ public class SplashActivity extends BaseActivity {
 //  splash bg
     bgView = (KenBurnsView) findViewById(R.id.bgView);
     AlphaAnimation alpha = new AlphaAnimation(1.0f, 1.0f);
-    alpha.setDuration(3000);
+    alpha.setDuration(2000);
     bgView.setAnimation(alpha);
     alpha.setAnimationListener(new Animation.AnimationListener() {
       @Override

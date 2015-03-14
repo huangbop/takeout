@@ -2,13 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#d0e0f0">
+                android:background="#ffff0000">
 
   <com.flaviofaria.kenburnsview.KenBurnsView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:id="@+id/bgView"
-      android:scaleType="matrix"
       android:src="@drawable/bg"/>
 
   <TextView
@@ -17,11 +16,11 @@
       android:text="@string/splash_text"
       android:id="@+id/splash_text"
       android:layout_alignParentBottom="true"
-      android:textColor="#ffe0e0e0"
+      android:textColor="#ffb0b0b0"
       android:autoText="false"
       android:gravity="center_vertical|center_horizontal"
       android:textAlignment="center"
-      android:textSize="20dp"
+      android:textSize="10dp"
       />
 
 </RelativeLayout>
