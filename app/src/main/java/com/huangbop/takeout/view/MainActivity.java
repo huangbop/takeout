@@ -2,6 +2,10 @@ package com.huangbop.takeout.view;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.huangbop.takeout.R;
 import com.ikimuhendis.ldrawer.ActionBarDrawerToggle;
 import com.ikimuhendis.ldrawer.DrawerArrowDrawable;
@@ -27,10 +32,26 @@ public class MainActivity extends BaseActivity {
   private CharSequence mTitle;
   private String[] mActionTitles;
 
+  PagerSlidingTabStrip tabs;
+  ViewPager pager;
+  FragmentPagerAdapter adapter;
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+//
+    tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+    pager = (ViewPager) findViewById(R.id.pager);
+
+    adapter = new MyPagerAdapter(getSupportFragmentManager());
+    pager.setAdapter(adapter);
+
+    tabs.setViewPager(pager);
+
+
 
     mTitle = mDrawerTitle = getTitle();
     mActionTitles = getResources().getStringArray(R.array.actions_array);
@@ -91,7 +112,33 @@ public class MainActivity extends BaseActivity {
     super.onConfigurationChanged(newConfig);
     // Pass any configuration change to the drawer toggls
     mDrawerToggle.onConfigurationChanged(newConfig);
+
   }
 
+
+  public class MyPagerAdapter extends FragmentPagerAdapter {
+
+    private final String[] TITLES = {"Categories", "Home", "Top Paid", "Top Free", "Top Grossing", "Top New Paid",
+            "Top New Free", "Trending"};
+
+    public MyPagerAdapter(FragmentManager fm) {
+      super(fm);
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+      return TITLES[position];
+    }
+
+    @Override
+    public int getCount() {
+      return TITLES.length;
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+      return SuperAwesomeCardFragment.newInstance(position);
+    }
+  }
 
 }
